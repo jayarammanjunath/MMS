@@ -1,5 +1,5 @@
-# Use the official OpenJDK 17 image as the base
-FROM openjdk:17-jre-slim
+# Use OpenJDK 17 from Docker Hub (this version includes JDK)
+FROM openjdk:17
 
 # Set the working directory inside the container
 WORKDIR /app
