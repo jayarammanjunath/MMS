@@ -1,14 +1,14 @@
-# Use OpenJDK 17 from Docker Hub (this version includes JDK)
-FROM openjdk:17
+# Use OpenJDK 17 as base image
+FROM openjdk:17-jdk-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the built jar file into the container
+# Copy the correct JAR built by Maven
 COPY target/studentsystem-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port 8282
 EXPOSE 8282
 
-# Run the jar file
+# Run the JAR
 ENTRYPOINT ["java", "-jar", "app.jar"]
