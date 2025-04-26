@@ -4,11 +4,11 @@ FROM openjdk:17
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Spring Boot JAR file from your local machine to the container
-COPY target/Market-Management-System-0.0.1-SNAPSHOT.jar /app/Market-Management-System-0.0.1-SNAPSHOT.jar
+# Copy the built jar file into the container
+COPY target/studentsystem-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port 8081 inside the container
-EXPOSE 8081
+# Expose port 8282
+EXPOSE 8282
 
-# Run the Spring Boot application
-CMD ["java", "-jar", "Market-Management-System-0.0.1-SNAPSHOT.jar"]
+# Run the jar file
+ENTRYPOINT ["java", "-jar", "app.jar"]
